@@ -9,8 +9,10 @@ import SwiftUI
 
 struct RecipeView: View {
     var recipe: Recipe
+    @State private var isEditing = false
     
     var body: some View {
+       
         ScrollView {
             AsyncImage(url: URL(string: recipe.image)) { image in
                 image
@@ -43,7 +45,19 @@ struct RecipeView: View {
             }
             .padding(.horizontal)
         }
-        .ignoresSafeArea(.container, edges: .top)
+        //        .ignoresSafeArea(.container, edges: .top)
+        .toolbar {
+            ToolbarItem(placement: .navigationBarTrailing) {
+                Button(isEditing ? "Done" : "Edit") {
+                    withAnimation {
+                        isEditing.toggle()
+                    }
+                }
+            }
+        }
+        .sheet(isPresented: $isEditing) {
+            EditRecipeView(recipe: recipe)
+        }
     }
 }
 

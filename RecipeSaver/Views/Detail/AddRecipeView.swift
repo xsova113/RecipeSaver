@@ -57,8 +57,6 @@ struct AddRecipeView: View {
                 } header: {
                     Text("Directions")
                 }
-                
-                
             }
             .toolbar(content: {
                 ToolbarItem(placement: .navigationBarLeading) {
@@ -101,13 +99,6 @@ extension AddRecipeView {
         recipesVM.addRecipe(recipe: newRecipe)
     }
 }
-
-extension AddRecipeView {
-    private func deleteRecipe() {
-        
-    }
-}
-
 
 struct AddRecipeView_Previews: PreviewProvider {
     static var previews: some View {

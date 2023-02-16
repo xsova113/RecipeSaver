@@ -8,7 +8,6 @@
 import SwiftUI
 
 struct TabBar: View {
-    @EnvironmentObject var recipesVM: RecipesViewModel
     
     var body: some View {
         TabView {

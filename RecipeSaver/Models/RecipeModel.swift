@@ -20,7 +20,7 @@ enum Category: String, CaseIterable, Identifiable {
 
 struct Recipe: Identifiable, Equatable {
     let id = UUID()
-    let name: String
+    var name: String
     let image: String
     let description: String
     let category: Category.RawValue
