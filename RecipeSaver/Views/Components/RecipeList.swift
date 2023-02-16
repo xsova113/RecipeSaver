@@ -41,12 +41,6 @@ struct RecipeList: View {
                                 .symbolRenderingMode(.palette)
                                 .foregroundStyle(.white, Color.red)
                         }
-                        Button {
-                            isEditingDetail.toggle()
-                        } label: {
-                            Image(systemName: "square.and.pencil")
-                        }
-
                     }
                     
                     NavigationLink {
